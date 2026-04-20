@@ -1,18 +1,21 @@
 const express= require("express")
+const {userAuth}=require("./middlewares/user")
 
 const app= express()
 
-app.use("/test",(req,res)=>{
-    res.send("Hello from pooja hello hello hi")
+app.get("/user/getAccount",userAuth,(req,res)=>{
+
+    res.send("User looged in successfully")
 })
 
-app.use("/demo",(req,res)=>{
-    res.send("this is a hurrah!!!")
+
+
+app.get("/user/deleteAccount",userAuth,(req,res)=>{
+
+    res.send("User deleted in successfully")
 })
 
-app.use("/",(req,res)=>{
-    res.send("Goood night yahhhhhhh")
-})
+
 
 
 app.listen(7777,()=>{
