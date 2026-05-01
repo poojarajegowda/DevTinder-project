@@ -9,15 +9,9 @@ const userRouter = require("./routes/user")
 const cors = require("cors")
 require("dotenv").config();
 
-// app.use(cors({
-//   origin: "http://localhost:5173",
-//   credentials: true,
-//   methods: ["GET", "POST", "PATCH", "PUT", "DELETE", "OPTIONS"]
-// }));
-
 app.use(cors({
-  origin: "*",
-  credentials: true,
+  origin:"https://dev-tinder-web-plum-delta.vercel.app",
+  credentials: true
 }));
 
 app.use(express.json())

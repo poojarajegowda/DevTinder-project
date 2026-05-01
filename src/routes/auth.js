@@ -25,9 +25,12 @@ const {firstName, lastName, emailID, password} =req.body
 
    const token = await savedUser.getJWT();
 
-   res.cookie("token", token,{
-      expires: new Date(Date.now() + 8 * 3600000),
-   })
+   res.cookie("token", token, {
+  expires: new Date(Date.now() + 8 * 3600000),
+   httpOnly: true,
+  secure: true,   
+  sameSite: "none" 
+});
 
    res.json({
     message: "User saved successfully",
@@ -57,7 +60,10 @@ const token = await user.getJWT();
 
 //set the cookie
 res.cookie("token", token, {
-  expires: new Date(Date.now() + 8 * 3600000)
+  expires: new Date(Date.now() + 8 * 3600000),
+   httpOnly: true,
+  secure: true,   
+  sameSite: "none" 
 });
 
     res.send(user)
