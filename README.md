@@ -64,7 +64,7 @@ Backend service for DevTinder – a developer networking platform where users ca
 ## ⚙️ Setup Instructions
 
 1. Clone the repo:
-git clone https://github.com/your-username/devtinder-backend.git
+git clone https://github.com/poojarajegowda/DevTinder-project
 cd devtinder-backend
 2. Install dependencies:
 npm install
